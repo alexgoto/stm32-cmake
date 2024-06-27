@@ -30,7 +30,7 @@ else()
 endif()
 
 if(IS_DIRECTORY "${LwIP_ROOT}/system")
-    set(LwIP_SYS_INCLUDE_DIR "${LwIP_ROOT}/system")
+    set(LwIP_SYS_INCLUDE_DIR "${LwIP_ROOT}/system/arch")
     set(LwIP_SYS_SOURCES "${LwIP_ROOT}/system/OS/sys_arch.c")
 else()
     message(WARNING "LwIP system include directory not found. Build might fail")
