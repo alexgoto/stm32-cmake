@@ -79,6 +79,12 @@ if(NOT (TARGET LwIP::NETIF))
     target_link_libraries(LwIP::NETIF INTERFACE LwIP)
 endif()
 
+if(NOT (TARGET LwIP::IPERF))
+    add_library(LwIP::IPERF INTERFACE IMPORTED)
+    target_sources(LwIP::IPERF INTERFACE ${lwipiperf_SRCS})
+    target_link_libraries(LwIP::IPERF INTERFACE LwIP)
+endif()
+
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(LwIP
     REQUIRED_VARS LwIP_ROOT LwIP_INCLUDE_DIR LwIP_SYS_INCLUDE_DIR
